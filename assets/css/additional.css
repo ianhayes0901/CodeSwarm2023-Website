@@ -1,0 +1,107 @@
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.frame {
+  border-radius: 10px;
+}
+
+.features .image img {
+  display: block;
+  border-radius: 100%;
+  width: 12em;
+  height: 12em;
+  object-fit: cover;
+}
+
+.faq-item {
+  width: 100%;
+}
+
+.schedule-pill {
+  padding: 0 0 0 0;
+}
+
+.schedule-link {
+  padding: 0 0;
+}
+
+.profile,
+.sponsor {
+  position: relative;
+  top: 0;
+  transition: top ease 0.5s;
+}
+
+.profile:hover,
+.sponsor:hover {
+  top: -10px;
+}
+
+.prize-grid {
+  /* User input values. */
+  --grid-layout-gap: 10px;
+  --grid-column-count: 3;
+  --grid-item--min-width: 300px;
+
+  /* Calculated values. */
+  --gap-count: calc(var(--grid-column-count) - 1);
+  --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+  --grid-item--max-width: calc(
+    (100% - var(--total-gap-width)) / var(--grid-column-count)
+  );
+
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr)
+  );
+  grid-gap: var(--grid-layout-gap);
+  grid-auto-flow: dense;
+}
+
+.prize {
+  position: relative;
+}
+
+.prize img {
+  min-width: 100%;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: 0.5s ease-in-out;
+  border-radius: 2%;
+}
+
+.prize:hover img {
+  filter: brightness(60%) blur(5px);
+}
+
+.prize:hover .prize-overlay {
+  opacity: 1;
+}
+
+.prize-overlay {
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  width: fit-content;
+}
+
+.prize-text {
+  font-weight: bold;
+  font-size: 1.75rem;
+  color: white;
+}
+
+.prize-overlay hr {
+  margin: 10px 0px;
+}
+

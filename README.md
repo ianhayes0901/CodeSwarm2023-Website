@@ -1,4 +1,4 @@
-###### Code Swarm 2022 Hackathon Website
+###### Code Swarm 2023 Hackathon Website
 
 * Theme/Template:
   
